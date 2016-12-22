@@ -6,18 +6,31 @@ var ConfirmBattleContainer = React.createClass({
 		router: React.PropTypes.object.isRequired
 	},
 	getInitialState() {
+		console.log('getInitialState');
 		return {
 			isLoading: true,
 			playerInfo: []
 		}
 	},
+	componentWillMount() {
+		console.log('componentWillMount');
+	},
 	componentDidMount() {
 		var query = this.props.location.query;
-		console.log('QUERY: ', query);
+		console.log('componentDidMount \nQUERY: ', query);
+		//Get the user info associated to username via GitHub API
+	},
+	componentWillReceiveProps() {
+		console.log('componentWillReceiveProps');
+	},
+	componentWillUnmount() {
+		console.log('componentWillUnmount');
 	},
 	render() {
 		return (
-			<ConfirmBattle />
+			<ConfirmBattle 
+				isLoading={this.state.isLoading}
+				playersInfo={this.state.playersInfo} />
 		);
 	}
 });
