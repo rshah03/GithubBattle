@@ -1,6 +1,7 @@
 var styles = {
 	transparentBg: {
-		background: 'transparent'
+		background: 'transparent',
+		fontSize: '20px'
 	}
 };
 
