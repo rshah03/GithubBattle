@@ -16,6 +16,12 @@ var ConfirmBattleContainer = React.createClass({
 	componentDidMount() {
 		var query = this.props.location.query;
 		githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+			.then(function (players) {
+				this.setState({
+					isLoading: false,
+					playersInfo: [players[0], players[1]]
+				})
+			}.bind(this)) //Binds context of 'this' to the outer function instead of the inner function
 	},
 	render() {
 		return (
