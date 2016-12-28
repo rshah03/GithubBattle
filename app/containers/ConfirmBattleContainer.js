@@ -23,10 +23,19 @@ var ConfirmBattleContainer = React.createClass({
 				})
 			}.bind(this)) //Binds context of 'this' to the outer function instead of the inner function
 	},
+	handleInitiateBattle () {
+		this.context.router.push({
+			pathname: '/results',
+			state: {
+				playersInfo: this.state.playersInfo
+			}
+		})
+	},
 	render() {
 		return (
 			<ConfirmBattle 
 				isLoading={this.state.isLoading}
+				onInitiateBattle={this.handleInitiateBattle}
 				playersInfo={this.state.playersInfo} />
 		);
 	}
