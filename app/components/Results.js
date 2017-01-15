@@ -1,11 +1,21 @@
  var React = require('react');
  var PropTypes = React.PropTypes;
 
- function Results (props) {
- 	return (
- 		<div> Results </div>
+function puke (obj) {
+	return <pre>{JSON.stringify(obj, 2, ' ')}</pre>
+}
+
+function Results (props) {
+	return (
+		<div> Results </div>
 
  	)
- }
+}
 
- module.exports = Results;
+Results.propTypes = {
+	isLoading: PropTypes.bool.isRequired,
+	playersInfo: PropTypes.array.isRequired,
+	scores: PropTypes.array, isRequired
+}
+
+module.exports = Results;
