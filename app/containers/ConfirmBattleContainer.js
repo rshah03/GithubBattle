@@ -3,11 +3,10 @@ var ConfirmBattle = require('../components/ConfirmBattle');
 var githubHelpers = require('../utils/githubHelpers');
 
 var ConfirmBattleContainer = React.createClass({
-	contectTypes: {
+	contextTypes: {
 		router: React.PropTypes.object.isRequired
 	},
 	getInitialState() {
-		console.log('getInitialState');
 		return {
 			isLoading: true,
 			playersInfo: []
