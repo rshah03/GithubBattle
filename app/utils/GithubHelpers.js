@@ -47,9 +47,7 @@ var helpers = {
 				return user.data;
 			})
 		})
-		.catch(function (err) {
-			console.warn('Error in getPlayersInfo', err)
-		})
+		.catch((err) => console.warn('Error in getPlayersInfo', err))
 	},
 	battle (players) {
 		var playerOneData = getPlayersData(players[0]);
@@ -57,7 +55,7 @@ var helpers = {
 
 		return axios.all([playerOneData, playerTwoData])
 			.then(calculateScores)
-			.catch(function (err) {console.warn('Error in battle function: ', err)}) 
+			.catch((err) => console.warn('Error in battle function: ', err))
 	}
 };
 
