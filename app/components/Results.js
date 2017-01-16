@@ -7,15 +7,14 @@ function puke (obj) {
 
 function Results (props) {
 	return (
-		<div> Results </div>
+		<div>{puke(props)}</div>
 
  	)
 }
 
 Results.propTypes = {
-	isLoading: PropTypes.bool.isRequired,
 	playersInfo: PropTypes.array.isRequired,
-	scores: PropTypes.array, isRequired
+	scores: PropTypes.array.isRequired
 }
 
 module.exports = Results;
