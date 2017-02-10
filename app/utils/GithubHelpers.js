@@ -25,6 +25,7 @@ function getPlayersData (player) {
 		.then(function (totalStars) {
 			return {
 				followers: player.followers,
+				following: player.following,
 				totalStars: totalStars
 			}
 		})
@@ -32,8 +33,8 @@ function getPlayersData (player) {
 
 function calculateScores (players) {
 	return [
-		players[0].followers * 3 + players[0].totalStars,
-    	players[1].followers * 3 + players[1].totalStars
+		players[0].followers + (players[0].totalStars % 10)^2 + players[0].following, 
+    	players[1].followers + (players[1].totalStars % 10)^2 + players[1].following
 	]
 }
 
